@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PubMaui.Pages.OnBoardingPage"
+             Shell.NavBarIsVisible="False">
+    <Grid RowDefinitions="*,auto">
+
+        <VerticalStackLayout Grid.Row="0">
+            <Image Source="blackandwhitelogo" Margin="0,100,0,0" WidthRequest="400" HorizontalOptions="Center" VerticalOptions="Center"></Image>
+            <Label Text="Welcome to the party!" Margin="0,60,0,0" HorizontalOptions="Center" FontSize="20" FontFamily="sans-serif"></Label>
+            <Label FontFamily="sans-serif" HorizontalOptions="Center" Padding="20" FontSize="16" FontAttributes="Bold" VerticalOptions="Center" Margin="0,40,0,0" Text="Our Pub at a Glance:"></Label>
+            <Label FontFamily="sans-serif" HorizontalOptions="Center" Padding="0" FontSize="14"  VerticalOptions="Center" Margin="0,0,0,0" Text="Take-out and delivery are OPEN!"></Label>
+            <Label FontFamily="sans-serif" HorizontalOptions="Center" Padding="0" FontSize="14"  VerticalOptions="Center" Margin="60,30,40,0" Text="Serving you since 2006. Come on in, Terra and the team are waiting to help you make memories with great food and great friends!"></Label>
+        </VerticalStackLayout>
+        <HorizontalStackLayout Grid.Row="1">
+            <Button Text="Signin" Padding="15" Clicked="SignIn_Clicked" Margin="20" WidthRequest="160" BackgroundColor="#65021b" Grid.Column="0"></Button>
+            <Button HorizontalOptions="Center" Clicked="SignUp_Clicked" Text="Signup" Padding="15" Margin="20" WidthRequest="160" BackgroundColor="#65021b" Grid.Column="0"></Button>
+        </HorizontalStackLayout>
+    </Grid>
+</ContentPage>

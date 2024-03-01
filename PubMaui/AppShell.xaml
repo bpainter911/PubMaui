@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="PubMaui.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:local="clr-namespace:PubMaui"
+    xmlns:pages="clr-namespace:PubMaui.Pages"
+    Shell.FlyoutBehavior="Flyout"
+    Title="PubMaui">
+
+    <!--<ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />-->
+
+    <Shell.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="#65021b"
+                                   StatusBarStyle="LightContent"/>
+    </Shell.Behaviors>
+
+    <ShellContent ContentTemplate="{DataTemplate pages:OnBoardingPage}"
+                  Shell.FlyoutBehavior="Disabled"
+                  Shell.FlyoutItemIsVisible="False"/>
+
+    <TabBar FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate pages:HomePage}"
+            Icon="home"
+            Route="HomePage" 
+            Shell.NavBarIsVisible="False"/>
+        <ShellContent
+            Title="Cart"
+            ContentTemplate="{DataTemplate pages:CartPage}"
+            Icon="cart"
+            Route="CartPage" />
+        <ShellContent
+            Title="Rewards"
+            ContentTemplate="{DataTemplate pages:PointsPage}"
+            Icon="plus"
+            Route="PointsPage" />
+        <ShellContent
+            Title="Profile"
+            ContentTemplate="{DataTemplate pages:ProfilePage}"
+            Icon="user"
+            Route="ProfilePage" />
+    </TabBar>
+
+    <MenuItem Text="Signout"
+              IconImageSource="logout"
+              Clicked="SignoutClicked"/>
+
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid ColumnDefinitions="Auto,*, Auto"
+                  RowDefinitions="Auto,Auto"
+                  Padding="20" ColumnSpacing="15"
+                  RowSpacing="5">
+
+                <Image Source="{Binding FlyoutIcon}" Grid.Row="0" Grid.Column="0" HeightRequest="40" WidthRequest="50">
+                    <Image.Behaviors>
+                        <toolkit:IconTintColorBehavior TintColor="#65021b"/>
+                    </Image.Behaviors>
+                </Image>
+                <Label Text="{Binding Title}" Grid.Row="0" Grid.Column="1" TextColor="#65021b"  VerticalOptions="Center" FontSize="18"/>
+                <Image Source="rightarrow" Grid.Row="0" Grid.Column="2" WidthRequest="30">
+                    <Image.Behaviors>
+                        <toolkit:IconTintColorBehavior TintColor="#65021b"/>
+                    </Image.Behaviors>
+                </Image>
+                <BoxView Grid.Row="1"
+                         Grid.ColumnSpan="3"
+                         Color="#65021b"/>
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <Grid ColumnDefinitions="Auto,*"
+                  RowDefinitions="Auto,Auto"
+                  Padding="20" ColumnSpacing="15"
+                  RowSpacing="5">
+                <Image Source="{Binding Icon}" Grid.Row="0" Grid.Column="0" HeightRequest="40" WidthRequest="50">
+                    <Image.Behaviors>
+                        <toolkit:IconTintColorBehavior TintColor="#65021b"/>
+                    </Image.Behaviors>
+                </Image>
+                <Label Text="{Binding Text}" Grid.Row="0" Grid.Column="1" TextColor="#65021b"  VerticalOptions="Center" FontSize="18"/>
+                
+                
+            </Grid>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+
+    <Shell.FlyoutHeader>
+        <Border Padding="0" StrokeThickness="0">
+            <VerticalStackLayout HorizontalOptions="Center">
+                <Image Source="blackandwhitelogo" HeightRequest="200" WidthRequest="300" HorizontalOptions="Center"></Image>
+                
+            </VerticalStackLayout>
+        </Border>
+    </Shell.FlyoutHeader>
+
+    <Shell.FlyoutFooter>
+        <Border>
+            <VerticalStackLayout>
+                <Label Text="Copyright @2024 | A BAP Solution" HorizontalOptions="Center" TextColor="#65021b"></Label>
+        </VerticalStackLayout>
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+            </Border.GestureRecognizers>
+        </Border>
+    </Shell.FlyoutFooter>    
+       
+
+</Shell>

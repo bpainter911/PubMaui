@@ -24,8 +24,15 @@ namespace PubMaui.Api.Services
 
             var user = new User
             {
-                Email = dto.Email,
+                FirstName = dto.FirstName,
+                LastName = dto.LastName,
                 FullName = dto.FullName,
+                Email = dto.Email,
+                PhNumber = dto.PhNumber,
+                Address = dto.Address,
+                CityTown =  dto.CityTown,
+                PostalCode = dto.PostalCode,
+                
             };
 
             (user.Salt, user.Hash) = _passwordService.GenerateSaltandHash(dto.Password);

@@ -34,6 +34,8 @@ builder.Services.AddTransient<TokenService>()
 
 var app = builder.Build();
 
+
+
 #if DEBUG
 MigrateDatabase(app.Services);
 #endif

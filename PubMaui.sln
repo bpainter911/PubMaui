@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PubMaui", "PubMaui\PubMaui.csproj", "{8F3FB9F4-A200-4EF3-B6F5-33AAE963CAFF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EDC295BC-6B35-4CF8-9A30-E6F6B7E62B8F} = {EDC295BC-6B35-4CF8-9A30-E6F6B7E62B8F}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PubMaui.Api", "PubMaui.Api\PubMaui.Api.csproj", "{ECCC30EF-D2C4-45C3-88C0-714F69B5FF4C}"
 EndProject

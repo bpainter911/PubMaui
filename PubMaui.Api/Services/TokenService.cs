@@ -36,7 +36,7 @@ namespace PubMaui.Api.Services
 
 
             var issuer = _configuration["Jwt:Issuer"];
-            var expireInmMinutes = Convert.ToInt32(_configuration["Jwt:ExpireInMinutes"]);
+            var expireInMinutes = Convert.ToInt32(_configuration["Jwt:ExpireInMinutes"]);
 
             Claim[] claims = [
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
@@ -48,8 +48,8 @@ namespace PubMaui.Api.Services
             var token = new JwtSecurityToken(
                 issuer: issuer,
                 audience: "*",
-                claims: [],
-                expires: DateTime.Now.AddMinutes(expireInmMinutes),
+                claims: claims,
+                expires: DateTime.Now.AddMinutes(expireInMinutes),
                 signingCredentials: credentials);
 
             var jwt = new JwtSecurityTokenHandler().WriteToken(token);

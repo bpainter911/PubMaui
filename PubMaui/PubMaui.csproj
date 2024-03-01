@@ -91,7 +91,10 @@
 	  <Folder Include="Components\" />
 	  <Folder Include="Data\" />
 	  <Folder Include="Resources\Images\MenuTemp\" />
-	  <Folder Include="Services\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\PubMaui.Shared\PubMaui.Shared.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

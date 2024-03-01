@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace PubMaui.Shared.Dtos
 {
-    public record SignupRequestDto(string FullName, string Email, string Password, string FirstName, string LastName, string PhNumber, string Address, string CityTown, string PostalCode);
+    public record SignupRequestDto(string FirstName, string LastName, string FullName, string Email, string Password, string PhNumber, string Address, string CityTown, string PostalCode);
 
 }

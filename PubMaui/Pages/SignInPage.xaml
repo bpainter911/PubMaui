@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:vm="clr-namespace:PubMaui.ViewModels"
              x:Class="PubMaui.Pages.SignInPage"
              Title="Sign in"
+             x:DataType="vm:AuthViewModel"
              Shell.FlyoutBehavior="Disabled">
-    <VerticalStackLayout VerticalOptions="Center">
-        <Label 
-            Text="Welcome to another BAP Solution!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Button Text="Go to App" Clicked="GotoHome_Clicked"></Button>
-    </VerticalStackLayout>
+    <Grid>
+        <VerticalStackLayout VerticalOptions="Center" >
+            <Image Source="blackandwhitelogo.png" HeightRequest="80"></Image>
+           
+            <Entry Placeholder="Email" FontSize="16" Text="{Binding Email}" Keyboard="Email"></Entry>
+            <Entry Placeholder="Password" FontSize="16" Text="{Binding Password}" IsPassword="True"></Entry>
+            
+            <Label  FontSize="18" Text="I am new user, Sign Up" Padding="15" HorizontalOptions="Center" FontAttributes="Bold">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Signup_Tapped"></TapGestureRecognizer>
+                </Label.GestureRecognizers>
+            </Label>
+            <Button Text="Sign Up" Margin="10" Padding="15" IsEnabled="{Binding CanSignin}" Command="{Binding SigninCommand}"></Button>
+        </VerticalStackLayout>
+        <ActivityIndicator HorizontalOptions="Center" 
+                       VerticalOptions="Center" 
+                       Color="#65021b"
+                       IsRunning="{Binding IsBusy}"/>
+    </Grid>
 </ContentPage>

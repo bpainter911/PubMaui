@@ -1,9 +1,5 @@
 ﻿namespace PubMaui.Shared.Dtos
 {
-    public record AuthResponseDto(LoggedInUser User, string token)
-    {
-        //private LoggedInUser loggedInUser;
-
-        
-    }
+    public record AuthResponseDto(LoggedInUser User, string token);
+    
 }

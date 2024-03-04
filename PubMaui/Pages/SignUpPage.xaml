@@ -20,7 +20,7 @@
             <Entry Placeholder="Postal Code" FontSize="16" Text="{Binding PostalCode}"></Entry>
             <Label  FontSize="18" Text="I am an existing user, Sign In" Padding="15" HorizontalOptions="Center" FontAttributes="Bold">
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="SigninLable_Tapped"></TapGestureRecognizer>
+                    <TapGestureRecognizer Tapped="Signin_Tapped"></TapGestureRecognizer>
                 </Label.GestureRecognizers>
             </Label>
             <Button Text="Sign Up" Margin="10" Padding="15" IsEnabled="{Binding CanSignup}" Command="{Binding SignupCommand}"></Button>

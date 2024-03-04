@@ -13,8 +13,8 @@
             <Label FontFamily="sans-serif" HorizontalOptions="Center" Padding="0" FontSize="14"  VerticalOptions="Center" Margin="60,30,40,0" Text="Serving you since 2006. Come on in, Terra and the team are waiting to help you make memories with great food and great friends!"></Label>
         </VerticalStackLayout>
         <HorizontalStackLayout Grid.Row="1">
-            <Button Text="Signin" Padding="15" Clicked="SignIn_Clicked" Margin="20" WidthRequest="160" BackgroundColor="#65021b" Grid.Column="0"></Button>
-            <Button HorizontalOptions="Center" Clicked="SignUp_Clicked" Text="Signup" Padding="15" Margin="20" WidthRequest="160" BackgroundColor="#65021b" Grid.Column="0"></Button>
+            <Button Text="Sign In" Padding="15" Clicked="SignIn_Clicked" Margin="20" WidthRequest="160" BackgroundColor="#65021b" Grid.Column="0"></Button>
+            <Button HorizontalOptions="Center" Clicked="SignUp_Clicked" Text="Sign Up" Padding="15" Margin="20" WidthRequest="160" BackgroundColor="#65021b" Grid.Column="0"></Button>
         </HorizontalStackLayout>
     </Grid>
 </ContentPage>

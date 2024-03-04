@@ -56,7 +56,7 @@ namespace PubMaui.Api.Services
 
         private ResultWithDataDto<AuthResponseDto> GenerateAuthResponse(User user)
         {
-            var loggedInUser = new LoggedInUser(user.Id, user.FullName, user.Email);
+            var loggedInUser = new LoggedInUser(user.Id, user.FirstName, user.LastName, user.FullName, user.Email, user.PhNumber,user.Address,user.CityTown, user.PostalCode);
             var token = _tokenService.GenerateJwt(loggedInUser);
 
             var authResponse = new AuthResponseDto(loggedInUser, token);

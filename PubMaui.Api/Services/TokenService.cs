@@ -42,8 +42,11 @@ namespace PubMaui.Api.Services
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                 new Claim(ClaimTypes.Name, user.FullName),
                 new Claim(ClaimTypes.Email, user.Email),
-                
-                ];
+                new Claim(ClaimTypes.StreetAddress, user.Address),
+                new Claim(ClaimTypes.PostalCode, user.PostalCode),
+                new Claim(ClaimTypes.MobilePhone, user.PhNumber),
+
+            ];
 
             var token = new JwtSecurityToken(
                 issuer: issuer,

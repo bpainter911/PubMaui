@@ -28,7 +28,7 @@ builder.Services.AddAuthorization();
 
 builder.Services.AddTransient<TokenService>()
             .AddTransient<PasswordService>()
-            .AddTransient< AuthService>();
+            .AddTransient<AuthService>();
 
 
 
